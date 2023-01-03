@@ -1,0 +1,33 @@
+{
+   "name": "db.json",
+   "version": "1.0.0",
+   "description": "A light-weight module to interact with your local JSON database.",
+   "main": "dist/index.js",
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/PannH/db.json.git"
+   },
+   "keywords": [
+      "database",
+      "db",
+      "json",
+      "json file",
+      "local file",
+      "local",
+      "lightweight",
+      "light-weight",
+      "light weight",
+      "json database",
+      "database json",
+      "local database"
+   ],
+   "author": "PannH",
+   "license": "MIT",
+   "bugs": {
+      "url": "https://github.com/PannH/db.json/issues"
+   },
+   "homepage": "https://github.com/PannH/db.json#readme",
+   "devDependencies": {
+      "@types/node": "^18.11.18"
+   }
+}
