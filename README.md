@@ -47,11 +47,13 @@ users.deleteOne(userDocument.id);
 
 ## 📖 Documentation
 
-### JSONDatabase
+<details>
+<summary>JSONDatabase</summary>
 
 > Represents the database.
 
-#### Constructor
+<details>
+<summary>Constructor</summary>
 
 | Parameter |          Type          | Required | Default |      Description      |
 | :-------: | :--------------------: | :------: | :-----: | :-------------------: |
@@ -65,17 +67,19 @@ const database = new JSONDatabase({
 });
 ```
 
----
+</details>
 
-### JSONDatabase.tables
+<details>
+<summary>JSONDatabase.tables</summary>
 
 > Returns an array of each table's name.
 
 **Type:** `string[]`
 
----
+</details>
 
-### JSONDatabase.table(name)
+<details>
+<summary>JSONDatabase.table(name)</summary>
 
 > Loads a table from the database.
 
@@ -91,9 +95,10 @@ const database = new JSONDatabase({
 const users = database.table('users');
 ```
 
----
+</details>
 
-### JSONDatabase.createTable(name)
+<details>
+<summary>JSONDatabase.createTable(name)</summary>
 
 > Creates a new table into the database.
 
@@ -109,9 +114,10 @@ const users = database.table('users');
 const users = database.createTable('users');
 ```
 
----
+</details>
 
-### JSONDatabase.deleteTable(name)
+<details>
+<summary>JSONDatabase.deleteTable(name)</summary>
 
 > Delete an existing table from the database.
 
@@ -127,31 +133,37 @@ const users = database.createTable('users');
 database.deleteTable('users');
 ```
 
+</details>
+
+</details>
+
 ---
 
-### DatabaseTable
+<details>
+<summary>DatabaseTable</summary>
 
 > Represents a database table.
 
----
-
-### DatabaseTable.size
+<details>
+<summary>DatabaseTable.size</summary>
 
 > Returns the amount of documents inside the table.
 
 **Type:** `number`
 
----
+</details>
 
-### DatabaseTable.all
+<details>
+<summary>DatabaseTable.all</summary>
 
 > Returns an array of every table documents.
 
 **Type:** `TableDocument[]`
 
----
+</details>
 
-### DatabaseTable.getById(documentId)
+<details>
+<summary>DatabaseTable.getById(documentId)</summary>
 
 > Returns the table document that matches the specified id.
 
@@ -169,9 +181,10 @@ const DOCUMENT_ID = '0557f4db-5688-4d99-8f85-a83605cf8c1e';
 const userDocument = users.getById(DOCUMENT_ID);
 ```
 
----
+</details>
 
-### DatabaseTable.findOne(predicate)
+<details>
+<summary>DatabaseTable.findOne(predicate)</summary>
 
 > Returns the first table document that matches the predicate.
 
@@ -191,7 +204,10 @@ const userDocument = users.findOne(
 );
 ```
 
-### DatabaseTable.findMany(predicate)
+</details>
+
+<details>
+<summary>DatabaseTable.findMany(predicate)</summary>
 
 > Returns every documents that match the predicate.
 
@@ -211,9 +227,10 @@ const userDocuments = users.findMany((userDocument) =>
 );
 ```
 
----
+</details>
 
-### DatabaseTable.createOne(data)
+<details>
+<summary>DatabaseTable.createOne(data)</summary>
 
 > Creates a new table document and returns it.
 
@@ -232,9 +249,10 @@ const createdUserDocument = users.createOne({
 });
 ```
 
----
+</details>
 
-### DatabaseTable.createMany(...data)
+<details>
+<summary>DatabaseTable.createMany(...data)</summary>
 
 > Creates many table documents and returns them.
 
@@ -259,9 +277,10 @@ const createdUserDocuments = users.createMany(
 );
 ```
 
----
+</details>
 
-### DatabaseTable.deleteOne(documentId)
+<details>
+<summary>DatabaseTable.deleteOne(documentId)</summary>
 
 > Deletes a table document.
 
@@ -279,9 +298,10 @@ const DOCUMENT_ID = '0557f4db-5688-4d99-8f85-a83605cf8c1e';
 const deletedUserDocument = users.deleteOne(DOCUMENT_ID);
 ```
 
----
+</details>
 
-### DatabaseTable.deleteMany(...documentIds)
+<details>
+<summary>DatabaseTable.deleteMany(...documentIds)</summary>
 
 > Deletes many table documents.
 
@@ -302,9 +322,10 @@ const DOCUMENT_IDS = [
 const deletedUserDocuments = users.deleteMany(DOCUMENT_IDS);
 ```
 
----
+</details>
 
-### DatabaseTable.update(documentId, data)
+<details>
+<summary>DatabaseTable.update(documentId, data)</summary>
 
 > Updates a table document.
 
@@ -320,14 +341,17 @@ const deletedUserDocuments = users.deleteMany(DOCUMENT_IDS);
 ```javascript
 const DOCUMENT_ID = '0557f4db-5688-4d99-8f85-a83605cf8c1e';
 
+// Before: TableDocument { id: ..., value: { fullName: 'Alice Doe', ... } }
 const updatedUserDocument = users.update(DOCUMENT_ID, {
    fullName: 'Alice Dart'
 });
+// After: TableDocument { id: ..., value: { fullName: 'Alice Dart', ... } }
 ```
 
----
+</details>
 
-### DatabaseTable.increment(documentId, propertyKey, value)
+<details>
+<summary>DatabaseTable.increment(documentId, propertyKey, value)</summary>
 
 > Increments a document's property.
 
@@ -344,12 +368,15 @@ const updatedUserDocument = users.update(DOCUMENT_ID, {
 ```javascript
 const DOCUMENT_ID = '0557f4db-5688-4d99-8f85-a83605cf8c1e';
 
+// Before: TableDocument { id: ..., value: { age: 21, ... } }
 const updatedUserDocument = users.increment(DOCUMENT_ID, 'age');
+// After: TableDocument { id: ..., value: { age: 22, ... } }
 ```
 
----
+</details>
 
-### DatabaseTable.decrement(documentId, propertyKey, value)
+<details>
+<summary>DatabaseTable.decrement(documentId, propertyKey, value)</summary>
 
 > Decrements a document's property.
 
@@ -366,12 +393,15 @@ const updatedUserDocument = users.increment(DOCUMENT_ID, 'age');
 ```javascript
 const DOCUMENT_ID = '0557f4db-5688-4d99-8f85-a83605cf8c1e';
 
+// Before: TableDocument: { id: ..., value: { lives: 3, ... } }
 const updatedUserDocument = users.decrement(DOCUMENT_ID, 'lives');
+// After: TableDocument: { id: ..., value: { lives: 2, ... } }
 ```
 
----
+</details>
 
-### DatabaseTable.multiply(documentId, propertyKey, value)
+<details>
+<summary>DatabaseTable.multiply(documentId, propertyKey, value)</summary>
 
 > Multiplies a document's property.
 
@@ -388,12 +418,15 @@ const updatedUserDocument = users.decrement(DOCUMENT_ID, 'lives');
 ```javascript
 const DOCUMENT_ID = '0557f4db-5688-4d99-8f85-a83605cf8c1e';
 
+// Before: TableDocument: { id: ..., value: { chances: 10, ... } }
 const updatedUserDocument = users.multiply(DOCUMENT_ID, 'chances', 1.5);
+// After: TableDocument: { id: ..., value: { chances: 15, ... } }
 ```
 
----
+</details>
 
-### DatabaseTable.divide(documentId, propertyKey, value)
+<details>
+<summary>DatabaseTable.divide(documentId, propertyKey, value)</summary>
 
 > Divides a document's property.
 
@@ -410,12 +443,15 @@ const updatedUserDocument = users.multiply(DOCUMENT_ID, 'chances', 1.5);
 ```javascript
 const DOCUMENT_ID = '0557f4db-5688-4d99-8f85-a83605cf8c1e';
 
+// Before: TableDocument: { id: ..., value: { chances: 10, ... } }
 const updatedUserDocument = users.divide(DOCUMENT_ID, 'chances', 2);
+// Before: TableDocument: { id: ..., value: { chances: 5, ... } }
 ```
 
----
+</details>
 
-### DatabaseTable.deleteProperty(documentId, key)
+<details>
+<summary>DatabaseTable.deleteProperty(documentId, key)</summary>
 
 > Deletes a document's property.
 
@@ -431,12 +467,15 @@ const updatedUserDocument = users.divide(DOCUMENT_ID, 'chances', 2);
 ```javascript
 const DOCUMENT_ID = '0557f4db-5688-4d99-8f85-a83605cf8c1e';
 
+// Before: TableDocument: { id: ..., value: { fullName: 'John Doe', age: 21 } }
 const updatedUserDocument = users.deleteProperty(DOCUMENT_ID, 'fullName');
+// Before: TableDocument: { id: ..., value: { age: 21 } }
 ```
 
----
+</details>
 
-### DatabaseTable.push(documentId, propertyKey, ...items)
+<details>
+<summary>DatabaseTable.push(documentId, propertyKey, ...items)</summary>
 
 > Pushes items into an array document's property;
 
@@ -453,27 +492,36 @@ const updatedUserDocument = users.deleteProperty(DOCUMENT_ID, 'fullName');
 ```javascript
 const DOCUMENT_ID = '0557f4db-5688-4d99-8f85-a83605cf8c1e';
 
+// Before: TableDocument: { id: ..., value: { hobbies: ['programming'], ... } }
 const updatedUserDocument = users.push(DOCUMENT_ID, 'hobbies', 'tennis');
+// Before: TableDocument: { id: ..., value: { hobbies: ['programming', 'tennis'], ... } }
 ```
+
+</details>
+</details>
 
 ---
 
-### TableDocument
+<details>
+<summary>TableDocument</summary>
 
 > Represents a table document.
 
----
-
-### TableDocument.id
+<details>
+<summary>TableDocument.id</summary>
 
 > Returns the document's id.
 
 **Type:** `string`
 
----
+</details>
 
-### TableDocument.value
+<details>
+<summary>TableDocument.value</summary>
 
 > Returns the document's data.
 
 **Type:** `object`
+
+</details>
+</details>
