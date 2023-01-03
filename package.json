@@ -1,11 +1,11 @@
 {
-   "name": "db.json",
+   "name": "swift-database",
    "version": "1.0.0",
    "description": "A light-weight module to interact with your local JSON database.",
    "main": "dist/index.js",
    "repository": {
       "type": "git",
-      "url": "git+https://github.com/PannH/db.json.git"
+      "url": "git+https://github.com/PannH/swift-database.git"
    },
    "keywords": [
       "database",
@@ -24,9 +24,9 @@
    "author": "PannH",
    "license": "MIT",
    "bugs": {
-      "url": "https://github.com/PannH/db.json/issues"
+      "url": "https://github.com/PannH/swift-database/issues"
    },
-   "homepage": "https://github.com/PannH/db.json#readme",
+   "homepage": "https://github.com/PannH/swift-database#readme",
    "devDependencies": {
       "@types/node": "^18.11.18"
    }

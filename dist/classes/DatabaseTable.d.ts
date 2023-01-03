@@ -12,7 +12,7 @@ export default class DatabaseTable {
     /**
      * → Get an array of every documents
      */
-    getAll(): TableDocument[];
+    get all(): TableDocument[];
     /**
      * → Get a document by its id
      * @param documentId The document's id
@@ -94,6 +94,6 @@ export default class DatabaseTable {
      * @param propertyKey The key of the property you want to push the value to
      * @param value The value you want to push into the property
      */
-    push(documentId: string, propertyKey: string, value: any): TableDocument;
+    push(documentId: string, propertyKey: string, ...items: any[]): TableDocument;
 }
 export {};

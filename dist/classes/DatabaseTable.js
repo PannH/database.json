@@ -16,12 +16,12 @@ class DatabaseTable {
      * → Get the amount of documents
      */
     get size() {
-        return this.getAll().length;
+        return this.all.length;
     }
     /**
      * → Get an array of every documents
      */
-    getAll() {
+    get all() {
         const documentsData = this._file.data[this.name];
         return documentsData.map((documentData) => new TableDocument_1.default(documentData));
     }
@@ -38,14 +38,14 @@ class DatabaseTable {
      * @param predicate The predicate function
      */
     findOne(predicate) {
-        return this.getAll().find(predicate);
+        return this.all.find(predicate);
     }
     /**
      * → Get every documents that match the predicate
      * @param predicate The predicate function
      */
     findMany(predicate) {
-        return this.getAll().filter(predicate);
+        return this.all.filter(predicate);
     }
     /**
      * → Create a document
@@ -235,7 +235,7 @@ class DatabaseTable {
      * @param propertyKey The key of the property you want to push the value to
      * @param value The value you want to push into the property
      */
-    push(documentId, propertyKey, value) {
+    push(documentId, propertyKey, ...items) {
         const documentToUpdate = this.getById(documentId);
         if (!documentToUpdate)
             return undefined;
@@ -244,8 +244,8 @@ class DatabaseTable {
         if (!Array.isArray(documentToUpdate.value[propertyKey]))
             throw new Error(`The specified property key must lead to an array value.`);
         const fileData = this._file.data;
-        fileData[this.name].find((documentData) => documentData._id === documentToUpdate.id)[propertyKey].push(value);
-        documentToUpdate.value[propertyKey].push(value);
+        fileData[this.name].find((documentData) => documentData._id === documentToUpdate.id)[propertyKey].push(items);
+        documentToUpdate.value[propertyKey].push(items);
         this._file.updateData(fileData);
         return documentToUpdate;
     }

@@ -1,21 +1,21 @@
-![npm version](https://img.shields.io/npm/v/db.json?color=c80000&label=npm%20version) ![Downloads](https://img.shields.io/npm/dt/db.json?label=Downloads)
+![npm version](https://img.shields.io/npm/v/swift-database?color=c80000&label=npm%20version) ![Downloads](https://img.shields.io/npm/dt/swift-database?label=Downloads)
 
-# <center>🗃 db.json</center>
+# <center>🗃 swift-database</center>
 
-> `db.json` is a module that allows you to interact easily with your local JSON file.
+> `swift-database` is a module that allows you to interact easily with your local JSON file.
 
 ## 🔰 Getting started
 
 1. Install the module
 
 ```
- npm install db.json
+ npm install swift-database
 ```
 
 2. Initialize the database class
 
 ```javascript
-const { default: JSONDatabase } = require('db.json');
+const { default: JSONDatabase } = require('swift-database');
 
 const database = new Database({
    filePath: 'path/to/file.json'
